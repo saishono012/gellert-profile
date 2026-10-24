@@ -45,3 +45,31 @@ body {min-height: 100vh;margin: 0;}
 :root[data-theme="dark"] .botanical-frame {background: linear-gradient(125deg, #668b6c 0%, #496c52 22%, #304936 48%, #202d25 74%, #101614 100%);transition: background 0.4s ease;}
 /* Более светлый градиент верхнего блока профиля */
 :root[data-theme="dark"] .hero {background: linear-gradient(125deg, #739979 0%, #527957 24%, #354e3b 48%, #223128 75%, #121815 100%);}
+/* ======================================
+   КОНТРАСТНЫЙ ТЕКСТ В ТЁМНОЙ ТЕМЕ
+   ====================================== */
+:root[data-theme="dark"] {--ink: #fffdf5;--muted: #dce8dc;--green: #d4edcf;--gold: #f0d394;--blue: #c4e5ed;}
+/* Основной текст */
+:root[data-theme="dark"] body,
+:root[data-theme="dark"] .story-text,
+:root[data-theme="dark"] .story-text p {color: #f1f4ec;text-shadow: 0 1px 2px rgba(0, 0, 0, 0.35);}
+/* Заголовок и имя персонажа */
+:root[data-theme="dark"] .hero h1,
+:root[data-theme="dark"] .section-header h2 {color: #d8efcf;text-shadow: 0 2px 4px rgba(0, 0, 0, 0.35);}
+:root[data-theme="dark"] .surname {color: #e0eadc;}
+/* Небольшие заголовки и характеристики */
+:root[data-theme="dark"] .eyebrow,
+:root[data-theme="dark"] .traits,
+:root[data-theme="dark"] .stats dt,
+:root[data-theme="dark"] .stats dd {color: #e6f0df;}
+/* Цитата */
+:root[data-theme="dark"] blockquote {color: #e6eee0;}
+/* Подзаголовки и подписи к изображениям */
+:root[data-theme="dark"] .subtitle,
+:root[data-theme="dark"] .art-card figcaption,
+:root[data-theme="dark"] .hero-art figcaption {color: #dce8dc;}
+/* Декоративные элементы и нижние подписи */
+:root[data-theme="dark"] .section-footer {color: #f0d394;}
+/* Кнопка смены темы */
+:root[data-theme="dark"] .theme-toggle {color: #fffdf5;background: #202b26;border-color: #779879;}
+:root[data-theme="dark"] .theme-icon { color: #f0d394;}
