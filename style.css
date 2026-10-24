@@ -73,3 +73,27 @@ body {min-height: 100vh;margin: 0;}
 /* Кнопка смены темы */
 :root[data-theme="dark"] .theme-toggle {color: #fffdf5;background: #202b26;border-color: #779879;}
 :root[data-theme="dark"] .theme-icon { color: #f0d394;}
+/* Убираем размытие текста на карточках с изображениями */
+:root[data-theme="dark"] .art-card figcaption,
+:root[data-theme="dark"] .hero-art figcaption {text-shadow: none !important;filter: none !important;-webkit-font-smoothing: antialiased;}
+/* Убираем тень у текста внутри самих карточек */
+:root[data-theme="dark"] .art-card,
+:root[data-theme="dark"] .hero-art {text-shadow: none;}
+/* Восстановление читаемого текста в тёмной теме */
+:root[data-theme="dark"] .story-text,
+:root[data-theme="dark"] .story-text p,
+:root[data-theme="dark"] .story-text span,
+:root[data-theme="dark"] .traits,
+:root[data-theme="dark"] .subtitle,
+:root[data-theme="dark"] blockquote,
+:root[data-theme="dark"] .art-card figcaption,
+:root[data-theme="dark"] .hero-art figcaption,
+:root[data-theme="dark"] .stats dt,
+:root[data-theme="dark"] .stats dd,
+:root[data-theme="dark"] .section-footer {color: #f4f4ee !important;-webkit-text-fill-color: #f4f4ee !important;text-shadow: none !important;filter: none !important;opacity: 1 !important;}
+/* Заголовки */
+:root[data-theme="dark"] .hero h1,
+:root[data-theme="dark"] .section-header h2 {color: #e5f5da !important;-webkit-text-fill-color: #e5f5da !important;text-shadow: none !important;opacity: 1 !important;}
+/* Подписи и текст на карточках */
+:root[data-theme="dark"] .art-card figcaption,
+:root[data-theme="dark"] .hero-art figcaption {display: block !important;visibility: visible !important;opacity: 1 !important;color: #26352b !important;-webkit-text-fill-color: #26352b !important;background: transparent !important;border: none !important;filter: none !important;font-weight: 600 !important;-webkit-font-smoothing: auto !important;text-shadow:-1px -1px 0 #fffdf5,1px -1px 0 #fffdf5,-1px  1px 0 #fffdf5, 1px  1px 0 #fffdf5, 0 1px 3px rgba(255, 253, 245, 0.5) !important;}
