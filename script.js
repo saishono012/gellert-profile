@@ -3,14 +3,20 @@
   const button = document.getElementById('themeToggle');
   const icon = button.querySelector('.theme-icon');
   const label = button.querySelector('.theme-label');
-  const saved = null; // No storage required; iframe-friendly and self-contained.
-  function setTheme(theme) {
-    root.dataset.theme = theme;
-    const dark = theme === 'dark';
-    button.setAttribute('aria-pressed', String(dark));
-    icon.textContent = dark ? '☀' : '☾';
-    label.textContent = dark ? 'Светлая тема' : 'Тёмная тема';
-  }
+
+  // Порядок переключения режимов
+  const themes = ['light', 'dark', 'forum'];
+
+  const themeLabels = {light:{icon: '☾',label: 'Тёмная тема'},dark: {icon: '◐',label: 'Фон форума'},forum: {icon: '☀',label: 'Светлая тема'}};
+  function setTheme(theme) {root.dataset.theme = theme;
+  const next = themeLabels[theme];icon.textContent = next.icon;label.textContent = next.label;button.setAttribute('aria-label',`Переключить оформление: ${next.label}`);}
+
+  // При открытии профиля используется светлая тема
   setTheme('light');
-  button.addEventListener('click', () => setTheme(root.dataset.theme === 'dark' ? 'light' : 'dark'));
-})();
+
+  button.addEventListener('click', () => {
+    const current = root.dataset.theme || 'light';
+    const index = themes.indexOf(current);
+    const next = themes[(index + 1) % themes.length];
+
+    setTheme(next);});})();
