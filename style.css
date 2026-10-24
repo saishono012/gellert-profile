@@ -28,3 +28,23 @@ html[data-theme="light"] body {background: #ffffff !important;background-color: 
 html[data-theme="dark"],
 html[data-theme="dark"] body {background: #1a1a1a !important;background-color: #1a1a1a !important;}
 body {min-height: 100vh;margin: 0;}
+.art-stack {position: relative;width: 100%;max-width: 420px;min-height: 400px;margin: 10px auto 20px;isolation: isolate;}
+/* Общий стиль обеих карточек */
+.art-stack .art-card {position: absolute;width: 72%;max-width: none;margin: 0;box-sizing: border-box;}
+/* Первая иллюстрация — крупная, сзади */
+.art-stack .art-card:first-child {top: 5px;left: 2%;z-index: 1;transform: rotate(-4deg);}
+/* Вторая иллюстрация — спереди, снизу справа */
+.art-stack .art-card:last-child {right: 1%;bottom: 5px;width: 58%;z-index: 2;transform: rotate(3deg);}
+/* Высота изображений */
+.art-stack .art-card img {width: 100%;height: 270px;object-fit: cover;}
+.art-stack .art-card.small img {height: 200px;}
+/* Небольшое движение при наведении */
+.art-stack .art-card {transition: transform 0.3s ease;}
+.art-stack:hover .art-card:first-child {transform: rotate(-6deg) translate(-3px, -2px);}
+.art-stack:hover .art-card:last-child {transform: rotate(5deg) translate(3px, 2px);}
+/* Адаптация под мобильные устройства */
+@media (max-width: 720px) {.art-stack {min-height: 350px;max-width: 360px;}
+.art-stack .art-card {width: 76%;}
+.art-stack .art-card img {height: 235px;}
+.art-stack .art-card:last-child {width: 60%;}
+.art-stack .art-card.small img {height: 170px;}}
