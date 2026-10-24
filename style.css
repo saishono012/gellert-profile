@@ -1,6 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=PT+Serif:wght@400;700&display=swap');
 :root{--page:transparent;--paper:#f7f3e8;--paper2:#fffdf6;--ink:#293d31;--muted:#667768;--green:#466b50;--green2:#779879;--blue:#7ca8b7;--gold:#b69a5c;--line:#c9d4bf;--shadow:0 18px 45px rgba(42,64,45,.13);--card-shadow:0 10px 25px rgba(41,61,49,.14)}
-:root[data-theme="dark"]{--paper:#202b26;--paper2:#293730;--ink:#e4e9db;--muted:#b4c3b3;--green:#9ab99a;--green2:#62836b;--blue:#8fbac9;--gold:#d3b879;--line:#46594b;--shadow:0 18px 45px rgba(0,0,0,.3);--card-shadow:0 10px 25px rgba(0,0,0,.3)}
 :root[data-theme="forum"] .botanical-frame {background: transparent;}
 :root[data-theme="forum"] .hero {background: transparent;}
 *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:transparent;color:var(--ink);font-family:"PT Serif",Georgia,serif;line-height:1.82;transition:color .25s}
@@ -42,3 +41,7 @@ body {min-height: 100vh;margin: 0;}
 .art-stack .art-card img {height: 235px;}
 .art-stack .art-card:last-child {width: 60%;}
 .art-stack .art-card.small img {height: 170px;}}
+/* Выразительный зелёно-угольный градиент тёмной темы */
+:root[data-theme="dark"] .botanical-frame {background: linear-gradient(125deg, #668b6c 0%, #496c52 22%, #304936 48%, #202d25 74%, #101614 100%);transition: background 0.4s ease;}
+/* Более светлый градиент верхнего блока профиля */
+:root[data-theme="dark"] .hero {background: linear-gradient(125deg, #739979 0%, #527957 24%, #354e3b 48%, #223128 75%, #121815 100%);}
