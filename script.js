@@ -2,7 +2,6 @@
   const root = document.documentElement;
   const button = document.getElementById('themeToggle');
   const icon = button.querySelector('.theme-icon');
-  const label = button.querySelector('.theme-label');
   const themes = ['light', 'dark', 'forum'];
   const themeLabels = {light: {icon: '☾'},dark: {icon: '◐'},forum: {icon: '☀'}};
   function setTheme(theme) {root.dataset.theme = theme;
