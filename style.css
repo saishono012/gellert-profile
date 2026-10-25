@@ -119,3 +119,10 @@ html[data-theme="light"], html[data-theme="light"] body { background: #fff; }
   .hero { gap: 24px; }
   .hero-art { max-width: 240px; }
 }
+
+/* Use two columns in forum embeds; stack only on small phones. */
+.hero { grid-template-columns: minmax(0, 1fr) minmax(0, .78fr); }
+.hero-copy { min-width: 0; }
+@media (max-width: 420px) {
+  .hero { grid-template-columns: 1fr; }
+}
