@@ -107,3 +107,15 @@ html[data-theme="light"], html[data-theme="light"] body { background: #fff; }
 .art-stack .art-card { width: 82%; }
 .art-stack .art-card:first-child { left: 4%; }
 .art-stack .art-card:last-child { right: 4%; width: 75%; }
+
+/* Keep the opening portrait compact when embedded in a forum iframe. */
+.hero-art { width: 100%; max-width: 260px; justify-self: center; }
+.hero h1 { font-size: clamp(46px, 8vw, 64px); }
+.hero .surname { font-size: clamp(22px, 4vw, 30px); margin: 10px 0 16px; }
+.hero blockquote { font-size: 19px; margin-bottom: 18px; }
+.hero .eyebrow { font-size: 10px; letter-spacing: .14em; }
+.hero .traits { font-size: 11px; gap: 7px 9px; }
+@media (max-width: 720px) {
+  .hero { gap: 24px; }
+  .hero-art { max-width: 240px; }
+}
