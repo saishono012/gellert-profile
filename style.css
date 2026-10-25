@@ -1,7 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=PT+Serif:wght@400;700&display=swap');
 :root{--page:transparent;--paper:#f7f3e8;--paper2:#fffdf6;--ink:#293d31;--muted:#667768;--green:#466b50;--green2:#779879;--blue:#7ca8b7;--gold:#b69a5c;--line:#c9d4bf;--shadow:0 18px 45px rgba(42,64,45,.13);--card-shadow:0 10px 25px rgba(41,61,49,.14)}
-:root[data-theme="forum"] .botanical-frame {background: transparent;}
-:root[data-theme="forum"] .hero {background: transparent;}
 *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:transparent;color:var(--ink);font-family:"PT Serif",Georgia,serif;line-height:1.82;transition:color .25s}
 .profile-shell {width: 100%;max-width: none;margin: 0;padding: 14px 0 60px;box-sizing: border-box;}
 .container {width: 100%;max-width: 100%;margin: 0 auto;box-sizing: border-box;}
@@ -21,11 +19,6 @@ blockquote{border-left:2px solid var(--gold);padding:4px 0 4px 18px;margin:0 0 2
 .leaf-spray{position:absolute;width:110px;height:90px;pointer-events:none;z-index:3}.leaf-spray--top{right:-15px;top:-17px;transform:rotate(8deg)}.leaf-spray--bottom{left:-17px;bottom:-20px;transform:rotate(190deg)}.leaf-spray i{position:absolute;width:34px;height:14px;background:var(--green2);border-radius:100% 0 100% 0;opacity:.8;box-shadow:inset 0 0 0 1px rgba(255,255,255,.2);transform-origin:left center}.leaf-spray i:nth-child(1){left:8px;top:56px;transform:rotate(-24deg)}.leaf-spray i:nth-child(2){left:27px;top:38px;transform:rotate(15deg)}.leaf-spray i:nth-child(3){left:45px;top:24px;transform:rotate(-25deg)}.leaf-spray i:nth-child(4){left:59px;top:43px;transform:rotate(25deg)}.leaf-spray i:nth-child(5){left:73px;top:14px;transform:rotate(-5deg)}
 @media(max-width:720px){.profile-shell {width: 100%;max-width: none;padding: 8px 12px 35px;margin: 0;}.hero{grid-template-columns:1fr;padding:25px;margin-bottom:28px}.hero-art img{height:280px}.profile-section{padding:24px 18px;margin-bottom:28px}.section-header{align-items:flex-start;flex-direction:column}.stats{gap:28px}.story-grid{grid-template-columns:1fr;gap:20px}.story-text{font-size:14px}.art-card{max-width:100%;width:min(100%,420px)}.art-card img{height:280px}.art-card.small img,.art-card.landscape img{height:235px}.leaf-spray{transform:scale(.75)}}
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;transition:none!important}}
-html {background-color: #ffffff !important;min-height: 100%;}
-html[data-theme="light"],
-html[data-theme="light"] body {background: #ffffff !important;background-color: #ffffff !important;}
-html[data-theme="dark"],
-html[data-theme="dark"] body {background: #1a1a1a !important;background-color: #1a1a1a !important;}
 body {min-height: 100vh;margin: 0;}
 .art-stack {position: relative;width: 100%;max-width: 420px;min-height: 400px;margin: 10px auto 20px;isolation: isolate;}
 .art-stack .art-card {position: absolute;width: 72%;max-width: none;margin: 0;box-sizing: border-box;}
@@ -41,59 +34,76 @@ body {min-height: 100vh;margin: 0;}
 .art-stack .art-card img {height: 235px;}
 .art-stack .art-card:last-child {width: 60%;}
 .art-stack .art-card.small img {height: 170px;}}
-/* Выразительный зелёно-угольный градиент тёмной темы */
-:root[data-theme="dark"] .botanical-frame {background: linear-gradient(125deg, #668b6c 0%, #496c52 22%, #304936 48%, #202d25 74%, #101614 100%);transition: background 0.4s ease;}
-/* Более светлый градиент верхнего блока профиля */
-:root[data-theme="dark"] .hero {background: linear-gradient(125deg, #739979 0%, #527957 24%, #354e3b 48%, #223128 75%, #121815 100%);}
-/* ======================================
-   КОНТРАСТНЫЙ ТЕКСТ В ТЁМНОЙ ТЕМЕ
-   ====================================== */
-:root[data-theme="dark"] {--ink: #fffdf5;--muted: #dce8dc;--green: #d4edcf;--gold: #f0d394;--blue: #c4e5ed;}
-/* Основной текст */
-:root[data-theme="dark"] body,
-:root[data-theme="dark"] .story-text,
-:root[data-theme="dark"] .story-text p {color: #f1f4ec;text-shadow: 0 1px 2px rgba(0, 0, 0, 0.35);}
-/* Заголовок и имя персонажа */
-:root[data-theme="dark"] .hero h1,
-:root[data-theme="dark"] .section-header h2 {color: #d8efcf;text-shadow: 0 2px 4px rgba(0, 0, 0, 0.35);}
-:root[data-theme="dark"] .surname {color: #e0eadc;}
-/* Небольшие заголовки и характеристики */
-:root[data-theme="dark"] .eyebrow,
-:root[data-theme="dark"] .traits,
-:root[data-theme="dark"] .stats dt,
-:root[data-theme="dark"] .stats dd {color: #e6f0df;}
-/* Цитата */
-:root[data-theme="dark"] blockquote {color: #e6eee0;}
-/* Подзаголовки и подписи к изображениям */
-:root[data-theme="dark"] .subtitle,
-:root[data-theme="dark"] .art-card figcaption,
-:root[data-theme="dark"] .hero-art figcaption {color: #dce8dc;}
-/* Декоративные элементы и нижние подписи */
-:root[data-theme="dark"] .section-footer {color: #f0d394;}
-/* Кнопка смены темы */
-:root[data-theme="dark"] .theme-toggle {color: #fffdf5;background: #202b26;border-color: #779879;}
-:root[data-theme="dark"] .theme-icon { color: #f0d394;}
-/* Убираем размытие текста на карточках с изображениями */
-:root[data-theme="dark"] .art-card figcaption,
-:root[data-theme="dark"] .hero-art figcaption {text-shadow: none !important;filter: none !important;-webkit-font-smoothing: antialiased;}
-/* Убираем тень у текста внутри самих карточек */
-:root[data-theme="dark"] .art-card,
-:root[data-theme="dark"] .hero-art {text-shadow: none;}
-/* Восстановление читаемого текста в тёмной теме */
-:root[data-theme="dark"] .story-text,
-:root[data-theme="dark"] .story-text p,
-:root[data-theme="dark"] .story-text span,
-:root[data-theme="dark"] .traits,
-:root[data-theme="dark"] .subtitle,
-:root[data-theme="dark"] blockquote,
-:root[data-theme="dark"] .art-card figcaption,
-:root[data-theme="dark"] .hero-art figcaption,
-:root[data-theme="dark"] .stats dt,
-:root[data-theme="dark"] .stats dd,
-:root[data-theme="dark"] .section-footer {color: #f4f4ee !important;-webkit-text-fill-color: #f4f4ee !important;text-shadow: none !important;filter: none !important;opacity: 1 !important;}
-/* Заголовки */
-:root[data-theme="dark"] .hero h1,
-:root[data-theme="dark"] .section-header h2 {color: #e5f5da !important;-webkit-text-fill-color: #e5f5da !important;text-shadow: none !important;opacity: 1 !important;}
-/* Подписи и текст на карточках */
-:root[data-theme="dark"] .art-card figcaption,
-:root[data-theme="dark"] .hero-art figcaption {display: block !important;visibility: visible !important;opacity: 1 !important;color: #26352b !important;-webkit-text-fill-color: #26352b !important;background: transparent !important;border: none !important;filter: none !important;font-weight: 600 !important;-webkit-font-smoothing: auto !important;text-shadow:-1px -1px 0 #fffdf5,1px -1px 0 #fffdf5,-1px  1px 0 #fffdf5, 1px  1px 0 #fffdf5, 0 1px 3px rgba(255, 253, 245, 0.5) !important;}
+/* Two themes and a compact alternating story layout. */
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --ink: #f1f4ec; --muted: #dce8dc; --green: #d4edcf;
+  --gold: #f0d394; --line: #85a59b;
+  --paper: #52796f; --paper2: #3e6158;
+}
+:root[data-theme="light"] { color-scheme: light; }
+html[data-theme="dark"], html[data-theme="dark"] body { background: #1a1a1a; }
+html[data-theme="light"], html[data-theme="light"] body { background: #fff; }
+:root[data-theme="dark"] .botanical-frame,
+:root[data-theme="dark"] .hero { background: var(--paper); }
+:root[data-theme="light"] .botanical-frame,
+:root[data-theme="light"] .hero { background: var(--paper); }
+.profile-shell { width: 100%; max-width: 724px; margin: 0 auto; padding: 14px 12px 60px; }
+.theme-toggle {
+  width: 44px; height: 44px; padding: 0; border-radius: 50%;
+  justify-content: center; margin: 10px max(12px, calc((100% - 700px) / 2)) 0 auto;
+}
+.theme-icon { line-height: 1; font-size: 22px; }
+.theme-label {
+  position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
+  overflow: hidden; clip-path: inset(50%); white-space: nowrap;
+}
+.theme-toggle:focus-visible { outline: 2px solid var(--gold); outline-offset: 4px; }
+.hero { padding: 30px; gap: 22px; }
+.hero h1 { font-size: clamp(54px, 9vw, 76px); }
+.hero-art img { height: 300px; }
+.profile-section { padding: 30px; }
+.story-grid { display: flex; flex-direction: column; gap: 42px; align-items: stretch; }
+.story-row { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 240px); gap: 24px; align-items: center; }
+.story-row--reverse { grid-template-columns: minmax(0, 240px) minmax(0, 1fr); }
+.story-row--reverse .art-stack { grid-column: 1; grid-row: 1; }
+.story-row--reverse .story-copy { grid-column: 2; grid-row: 1; }
+.story-copy { min-width: 0; display: grid; gap: 24px; }
+.art-stack { max-width: 240px; min-height: 440px; margin: 12px auto; }
+.art-stack .art-card { width: 76%; padding: 7px 7px 10px; }
+.art-stack .art-card:first-child { top: 4px; left: 2%; }
+.art-stack .art-card:last-child { bottom: 4px; right: 1%; width: 68%; }
+.art-stack .art-card img { height: 240px; }
+.art-stack .art-card.small img { height: 195px; }
+.art-stack .art-card figcaption { position: static; margin-top: 7px; line-height: 1.2; }
+@media (max-width: 560px) {
+  .hero { grid-template-columns: 1fr; padding: 25px; }
+  .profile-section { padding: 24px 18px; }
+  .story-row, .story-row--reverse { grid-template-columns: 1fr; gap: 22px; }
+  .story-row--reverse .story-copy, .story-row--reverse .art-stack { grid-column: auto; grid-row: auto; }
+}
+
+/* Square illustrations with a small overlap between each pair. */
+.hero-art { padding: 10px 10px 30px; }
+.hero-art img { height: auto; aspect-ratio: 1; object-fit: cover; }
+.art-stack { min-height: 0; height: 370px; }
+.art-stack .art-card { padding: 9px 9px 29px; }
+.art-stack .art-card img,
+.art-stack .art-card.small img,
+.art-stack .art-card.landscape img { height: auto; aspect-ratio: 1; object-fit: cover; }
+
+/* Photo frame colors follow the selected theme. */
+.hero-art,
+.art-card { background: #ffffff; border-color: #e5e5e5; }
+
+:root[data-theme="dark"] .hero-art,
+:root[data-theme="dark"] .art-card {
+  background: var(--ink);
+  border-color: var(--ink);
+}
+
+/* Slightly larger photos, with their centers closer horizontally. */
+.art-stack { height: 400px; }
+.art-stack .art-card { width: 82%; }
+.art-stack .art-card:first-child { left: 4%; }
+.art-stack .art-card:last-child { right: 4%; width: 75%; }
