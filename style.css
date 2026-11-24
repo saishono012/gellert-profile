@@ -485,3 +485,24 @@ body {
     background: transparent !important;
     background-color: transparent !important;
 }
+/* Убираем заливку внешних блоков профиля */
+html,
+body,
+.profile-shell,
+.container {
+    background: transparent !important;
+    background-color: transparent !important;
+}
+
+/* Делаем прозрачными большие поверхности */
+.botanical-frame,
+.hero {
+    background: transparent !important;
+    background-color: transparent !important;
+}
+
+/* Сохраняем оформление карточек с изображениями */
+.hero-art,
+.art-card {
+    background: #ffffff !important;
+}
