@@ -467,3 +467,8 @@ body *::-webkit-scrollbar {display: none !important;width: 0 !important;height: 
 :root:has(#gellert-forum:checked) .hero {
     background: transparent !important;
 }
+/* Полностью отключаем переключатель темы */
+.theme-toggle,
+.theme-switcher {
+    display: none !important;
+}
