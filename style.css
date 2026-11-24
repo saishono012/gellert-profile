@@ -126,3 +126,9 @@ html[data-theme="light"], html[data-theme="light"] body { background: #fff; }
 @media (max-width: 420px) {
   .hero { grid-template-columns: 1fr; }
 }
+/* Скрываем внутреннюю полосу прокрутки iframe */
+html,
+body {scrollbar-width: none !important;-ms-overflow-style: none !important;}
+html::-webkit-scrollbar,
+body::-webkit-scrollbar,
+body *::-webkit-scrollbar {display: none !important;width: 0 !important;height: 0 !important;}
