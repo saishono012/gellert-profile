@@ -320,3 +320,150 @@ body *::-webkit-scrollbar {display: none !important;width: 0 !important;height: 
 :root:has(#gellert-theme-forum:checked) blockquote {
     color: #f1f4ec;
 }
+/* =========================================
+   ПЕРЕКЛЮЧАТЕЛЬ ТЕМ БЕЗ JAVASCRIPT
+   ========================================= */
+
+.theme-switcher {
+    position: sticky;
+    top: 10px;
+    z-index: 100;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin: 0 0 14px auto;
+}
+
+.theme-switcher input {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    opacity: 0;
+}
+
+.theme-switcher .theme-toggle {
+    display: none;
+    position: relative;
+    top: auto;
+    margin: 0;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+/* Светлая → тёмная */
+:root:has(#gellert-light:checked) .theme-to-dark {
+    display: flex;
+}
+
+/* Тёмная → форум */
+:root:has(#gellert-dark:checked) .theme-to-forum {
+    display: flex;
+}
+
+/* Форум → светлая */
+:root:has(#gellert-forum:checked) .theme-to-light {
+    display: flex;
+}
+
+
+/* =========================================
+   СВЕТЛАЯ ТЕМА
+   ========================================= */
+
+:root:has(#gellert-light:checked) {
+    color-scheme: light;
+    background: #ffffff;
+}
+
+:root:has(#gellert-light:checked) body {
+    background: #ffffff;
+}
+
+:root:has(#gellert-light:checked) .botanical-frame {
+    background: var(--paper);
+}
+
+:root:has(#gellert-light:checked) .hero {
+    background: linear-gradient(
+        135deg,
+        var(--paper2),
+        var(--paper) 60%,
+        rgba(124,168,183,.15)
+    );
+}
+
+
+/* =========================================
+   ТЁМНАЯ ТЕМА
+   ========================================= */
+
+:root:has(#gellert-dark:checked) {
+    color-scheme: dark;
+
+    --ink: #f1f4ec;
+    --muted: #dce8dc;
+    --green: #d4edcf;
+    --green2: #739979;
+    --blue: #c4e5ed;
+    --gold: #f0d394;
+    --line: #526b59;
+
+    --paper: #202b26;
+    --paper2: #293730;
+}
+
+:root:has(#gellert-dark:checked) body {
+    background: #1a1a1a !important;
+    color: #f1f4ec;
+}
+
+:root:has(#gellert-dark:checked) .botanical-frame {
+    background: linear-gradient(
+        125deg,
+        #668b6c 0%,
+        #496c52 22%,
+        #304936 48%,
+        #202d25 74%,
+        #101614 100%
+    );
+}
+
+:root:has(#gellert-dark:checked) .hero {
+    background: linear-gradient(
+        125deg,
+        #739979 0%,
+        #527957 24%,
+        #354e3b 48%,
+        #223128 75%,
+        #121815 100%
+    );
+}
+
+:root:has(#gellert-dark:checked) .story-text,
+:root:has(#gellert-dark:checked) .story-text p,
+:root:has(#gellert-dark:checked) blockquote {
+    color: #f1f4ec;
+}
+
+:root:has(#gellert-dark:checked) .hero h1,
+:root:has(#gellert-dark:checked) .section-header h2 {
+    color: #e5f5da;
+}
+
+
+/* =========================================
+   ПРОЗРАЧНЫЙ ФОН ФОРУМА
+   ========================================= */
+
+:root:has(#gellert-forum:checked) {
+    background: transparent !important;
+}
+
+:root:has(#gellert-forum:checked) body {
+    background: transparent !important;
+}
+
+:root:has(#gellert-forum:checked) .botanical-frame,
+:root:has(#gellert-forum:checked) .hero {
+    background: transparent !important;
+}
