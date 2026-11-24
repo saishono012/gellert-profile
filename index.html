@@ -7,10 +7,52 @@
   <link rel="stylesheet" href="style.css?v=7">
 </head>
 <body>
-  <button class="theme-toggle" id="themeToggle" type="button">
-    <span class="theme-icon">☾</span>
-    <span class="theme-label">Тёмная тема</span>
-</button>
+  <div class="theme-switcher">
+
+    <input
+        type="radio"
+        name="gellert-theme"
+        id="gellert-theme-light"
+        checked
+    >
+
+    <input
+        type="radio"
+        name="gellert-theme"
+        id="gellert-theme-dark"
+    >
+
+    <input
+        type="radio"
+        name="gellert-theme"
+        id="gellert-theme-forum"
+    >
+
+    <label
+        for="gellert-theme-dark"
+        class="theme-toggle theme-to-dark"
+    >
+        <span class="theme-icon">☾</span>
+        <span class="theme-label">Тёмная тема</span>
+    </label>
+
+    <label
+        for="gellert-theme-forum"
+        class="theme-toggle theme-to-forum"
+    >
+        <span class="theme-icon">◐</span>
+        <span class="theme-label">Фон форума</span>
+    </label>
+
+    <label
+        for="gellert-theme-light"
+        class="theme-toggle theme-to-light"
+    >
+        <span class="theme-icon">☀</span>
+        <span class="theme-label">Светлая тема</span>
+    </label>
+
+</div>
 
   <main class="profile-shell">
     <header class="hero botanical-frame">
