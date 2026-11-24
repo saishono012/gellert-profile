@@ -468,10 +468,7 @@ body *::-webkit-scrollbar {display: none !important;width: 0 !important;height: 
     background: transparent !important;
 }
 /* Полностью отключаем переключатель темы */
-.theme-toggle,
-.theme-switcher {
-    display: none !important;
-}
+
 /* Убираем фон внешней области профиля */
 html,
 body {
@@ -495,14 +492,22 @@ body,
 }
 
 /* Делаем прозрачными большие поверхности */
-.botanical-frame,
-.hero {
-    background: transparent !important;
-    background-color: transparent !important;
-}
+
 
 /* Сохраняем оформление карточек с изображениями */
 .hero-art,
 .art-card {
     background: #ffffff !important;
 }
+
+/* Two accessible CSS-only themes for forum embeds without scripts. */
+:root:has(#gellert-dark:checked) .theme-to-light { display: flex; }
+.theme-switcher input:focus-visible ~ .theme-toggle {
+    outline: 2px solid var(--gold);
+    outline-offset: 4px;
+}
+:root:has(#gellert-dark:checked) { --paper: #52796f; }
+:root:has(#gellert-dark:checked) .botanical-frame,
+:root:has(#gellert-dark:checked) .hero { background: var(--paper); }
+:root:has(#gellert-dark:checked) .hero-art,
+:root:has(#gellert-dark:checked) .art-card { background: var(--ink) !important; }
