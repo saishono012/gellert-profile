@@ -1,28 +1,67 @@
 (() => {
-  function initThemeSwitch() {
-    const root = document.documentElement;
-    const button = document.getElementById('themeToggle');
-    if (!button) return;
-    const icon = button.querySelector('.theme-icon');
-    const label = button.querySelector('.theme-label');
-    function applyTheme(theme) {
-      theme = theme === 'light' ? 'light' : 'dark';
-      root.dataset.theme = theme;
-      const nextLabel = theme === 'dark' ? 'Светлая тема' : 'Тёмная тема';
-      icon.textContent = theme === 'dark' ? '☀' : '☾';
-      label.textContent = nextLabel;
-      button.setAttribute('aria-label', `Включить: ${nextLabel.toLowerCase()}`);
-      button.setAttribute('title', nextLabel);
-      button.setAttribute('aria-pressed', String(theme === 'dark'));
+    function initThemeSwitch() {
+        const root = document.documentElement;
+        const button = document.getElementById("themeToggle");
+
+        if (!button) {
+            console.error("Theme button not found");
+            return;
+        }
+
+        const icon = button.querySelector(".theme-icon");
+        const label = button.querySelector(".theme-label");
+
+        const themes = ["light", "dark", "forum"];
+
+        const settings = {
+            light: {
+                icon: "☾",
+                label: "Тёмная тема"
+            },
+            dark: {
+                icon: "◐",
+                label: "Фон форума"
+            },
+            forum: {
+                icon: "☀",
+                label: "Светлая тема"
+            }
+        };
+
+        function setTheme(theme) {
+            root.dataset.theme = theme;
+
+            icon.textContent = settings[theme].icon;
+            label.textContent = settings[theme].label;
+
+            button.setAttribute(
+                "aria-label",
+                "Следующая тема: " + settings[theme].label
+            );
+        }
+
+        setTheme(
+            themes.includes(root.dataset.theme)
+                ? root.dataset.theme
+                : "light"
+        );
+
+        button.addEventListener("click", function () {
+            const current = root.dataset.theme;
+            const index = themes.indexOf(current);
+            const next = themes[(index + 1) % themes.length];
+
+            setTheme(next);
+        });
     }
-    applyTheme(root.dataset.theme);
-    button.addEventListener('click', () => {
-      applyTheme(root.dataset.theme === 'dark' ? 'light' : 'dark');
-    });
-  }
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', initThemeSwitch, { once: true });
-  } else {
-    initThemeSwitch();
-  }
+
+    if (document.readyState === "loading") {
+        document.addEventListener(
+            "DOMContentLoaded",
+            initThemeSwitch,
+            { once: true }
+        );
+    } else {
+        initThemeSwitch();
+    }
 })();
