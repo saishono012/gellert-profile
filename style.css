@@ -132,3 +132,191 @@ body {scrollbar-width: none !important;-ms-overflow-style: none !important;}
 html::-webkit-scrollbar,
 body::-webkit-scrollbar,
 body *::-webkit-scrollbar {display: none !important;width: 0 !important;height: 0 !important;}
+/* ======================================
+   CSS-ПЕРЕКЛЮЧАТЕЛЬ ТРЁХ ТЕМ
+   БЕЗ JAVASCRIPT
+   ====================================== */
+
+/* Контейнер переключателя */
+
+.theme-switcher {
+    position: sticky;
+    top: 10px;
+    z-index: 30;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    min-height: 46px;
+    margin: 0 0 14px auto;
+}
+
+/* Скрываем радиокнопки */
+
+.theme-switcher input[type="radio"] {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    opacity: 0;
+    overflow: hidden;
+}
+
+/* Стили переключателя */
+
+.theme-switcher .theme-toggle {
+    display: none;
+    position: relative;
+    top: auto;
+    margin: 0;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Показываем нужную кнопку */
+
+:root:has(#gellert-theme-light:checked)
+.theme-to-dark {
+    display: flex;
+}
+
+:root:has(#gellert-theme-dark:checked)
+.theme-to-forum {
+    display: flex;
+}
+
+:root:has(#gellert-theme-forum:checked)
+.theme-to-light {
+    display: flex;
+}
+
+
+/* ======================================
+   СВЕТЛАЯ ТЕМА
+   ====================================== */
+
+:root:has(#gellert-theme-light:checked) {
+    --paper: #f7f3e8;
+    --paper2: #fffdf6;
+    --ink: #293d31;
+    --muted: #667768;
+    --green: #466b50;
+    --green2: #779879;
+    --blue: #7ca8b7;
+    --gold: #b69a5c;
+    --line: #c9d4bf;
+}
+
+:root:has(#gellert-theme-light:checked) body {
+    background: #ffffff;
+}
+
+:root:has(#gellert-theme-light:checked) .botanical-frame {
+    background: var(--paper);
+}
+
+:root:has(#gellert-theme-light:checked) .hero {
+    background: linear-gradient(
+        135deg,
+        var(--paper2),
+        var(--paper) 60%,
+        rgba(124,168,183,.15)
+    );
+}
+
+
+/* ======================================
+   ТЁМНАЯ ТЕМА
+   ====================================== */
+
+:root:has(#gellert-theme-dark:checked) {
+    --paper: #202b26;
+    --paper2: #293730;
+    --ink: #f1f4ec;
+    --muted: #dce8dc;
+    --green: #d4edcf;
+    --green2: #739979;
+    --blue: #c4e5ed;
+    --gold: #f0d394;
+    --line: #526b59;
+
+    --shadow: 0 18px 45px rgba(0,0,0,.3);
+    --card-shadow: 0 10px 25px rgba(0,0,0,.3);
+
+    background-color: #1a1a1a;
+}
+
+:root:has(#gellert-theme-dark:checked) body {
+    background: #1a1a1a !important;
+    color: #f1f4ec !important;
+}
+
+/* Зелёно-угольный градиент */
+
+:root:has(#gellert-theme-dark:checked) .botanical-frame {
+    background: linear-gradient(
+        125deg,
+        #668b6c 0%,
+        #496c52 22%,
+        #304936 48%,
+        #202d25 74%,
+        #101614 100%
+    );
+}
+
+:root:has(#gellert-theme-dark:checked) .hero {
+    background: linear-gradient(
+        125deg,
+        #739979 0%,
+        #527957 24%,
+        #354e3b 48%,
+        #223128 75%,
+        #121815 100%
+    );
+}
+
+/* Контрастный основной текст */
+
+:root:has(#gellert-theme-dark:checked) .story-text,
+:root:has(#gellert-theme-dark:checked) .story-text p,
+:root:has(#gellert-theme-dark:checked) .traits,
+:root:has(#gellert-theme-dark:checked) blockquote {
+    color: #f1f4ec !important;
+    text-shadow: none !important;
+}
+
+:root:has(#gellert-theme-dark:checked) .hero h1,
+:root:has(#gellert-theme-dark:checked) .section-header h2 {
+    color: #e5f5da !important;
+}
+
+:root:has(#gellert-theme-dark:checked) .surname,
+:root:has(#gellert-theme-dark:checked) .subtitle,
+:root:has(#gellert-theme-dark:checked) .eyebrow {
+    color: #e0eadc !important;
+}
+
+
+/* ======================================
+   ПРОЗРАЧНЫЙ ФОН ФОРУМА
+   ====================================== */
+
+:root:has(#gellert-theme-forum:checked) {
+    background: transparent !important;
+}
+
+:root:has(#gellert-theme-forum:checked) body {
+    background: transparent !important;
+    color: #f1f4ec;
+}
+
+:root:has(#gellert-theme-forum:checked) .botanical-frame,
+:root:has(#gellert-theme-forum:checked) .hero {
+    background: transparent !important;
+}
+
+/* Контраст текста на тёмном фоне форума */
+
+:root:has(#gellert-theme-forum:checked) .story-text,
+:root:has(#gellert-theme-forum:checked) .story-text p,
+:root:has(#gellert-theme-forum:checked) blockquote {
+    color: #f1f4ec;
+}
