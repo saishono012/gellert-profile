@@ -472,3 +472,16 @@ body *::-webkit-scrollbar {display: none !important;width: 0 !important;height: 
 .theme-switcher {
     display: none !important;
 }
+/* Убираем фон внешней области профиля */
+html,
+body {
+    background: transparent !important;
+    background-color: transparent !important;
+}
+
+/* Делаем прозрачной внешнюю оболочку */
+.profile-shell,
+.container {
+    background: transparent !important;
+    background-color: transparent !important;
+}
